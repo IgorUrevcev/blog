@@ -39,8 +39,8 @@
                                         <tr>
                                             <th style="width: 30px">#</th>
                                             <th>Наименование</th>
-                                            <th>Slug</th>
-                                            <th>Actions</th>
+                                            <th>Слаг</th>
+                                            <th>Активность</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,7 +57,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Подтвердите удаление')">
-                                                    <i class="fas fs-trash-alt"></i>
+                                                    <i class="fas fa-trash-alt"></i>
                                                 </button>
                                                 </form>
                                             </td>

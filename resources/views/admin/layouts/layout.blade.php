@@ -13,6 +13,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="/assets/css/adminlte.min.css">
 </head>
+@include('admin.layouts.error')
 
 <body class="hold-transition sidebar-mini">
   <!-- Site wrapper -->
@@ -229,6 +230,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
+    
     @yield('content')
     <!-- /.content-wrapper -->
 

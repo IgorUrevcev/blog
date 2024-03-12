@@ -22,5 +22,8 @@ class Category extends Model
                 'source'=>'title'
             ]
         ];
+
+        
     }
+    protected $fillable = ['title', 'slug'];
 }
