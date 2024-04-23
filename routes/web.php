@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RegisController;
 
 
 
@@ -20,12 +23,19 @@ use App\Http\Controllers\Admin\TagController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+
+Route::get('/register', [UserController::class, 'create'])->name('register.create');
+Route::post('/register', [UserController::class, 'store'])->name('register.store');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [MainController::class, 'index']) ->name('admin.index');
+    Route::get('/', [MainController::class, 'index'])->name('admin.index');
+    Route::get('/rrr', [RegisController::class, 'rrr']);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
+    Route::resource('/posts', PostController::class);
+   
     
 });
 

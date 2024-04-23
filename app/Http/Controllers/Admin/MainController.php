@@ -18,4 +18,9 @@ class MainController extends Controller
         // $tag->save();
         return view ('admin.index');
     }
+
+    public function rrr()
+    {
+        return 'jhhgjhjh';
+    }
 }

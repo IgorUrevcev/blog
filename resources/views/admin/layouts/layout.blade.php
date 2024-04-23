@@ -11,6 +11,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <link rel="stylesheet" href="/assets/css/adminlte.min.css">
 </head>
 @include('admin.layouts.error')
@@ -199,6 +201,12 @@
                 <p>Главная</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Регистрация</p>
+              </a>
+            </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-archive"></i>
@@ -245,6 +253,29 @@
                 </li>
               </ul>
             </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Статьи
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('posts.index') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Список Статей</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('posts.create') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Новая Статья</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -280,6 +311,17 @@
   <script src="/assets/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="/assets/js/demo.js"></script>
+  <script src="/assets/plugins/select2/js/select2.full.min.js"></script>
+  <script>
+    $(function() {
+      
+      $('.select2').select2()
+      $('.select2bs4').select2({
+        theme: 'bootstrap4'
+      })
+    })
+  </script>
+  
 </body>
 
 </html>
