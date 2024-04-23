@@ -174,7 +174,10 @@
             <img src="/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">
+              @if(Auth::check()) 
+              {{ Auth::user()->name }}
+              @endif</a>
           </div>
         </div>
 
@@ -202,9 +205,21 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="{{route('register.create')}}" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>Регистрация</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('login.create')}}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Вход</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('logout')}}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i>
+                <p>Выход</p>
               </a>
             </li>
             <li class="nav-item has-treeview">
